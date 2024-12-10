@@ -1,0 +1,34 @@
+{
+    "name": "Go CLI Development",
+    "dockerFile": "Dockerfile",
+    "context": ".",
+    "forwardPorts": [],
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash",
+                "[go]": {
+                    "editor.formatOnSave": true
+                },
+                "gopls": {
+                    "ui.completion.usePlaceholders": true
+                }
+            },
+            "extensions": [
+                "golang.go",
+                "GitHub.copilot",
+                "Gruntfuggly.todo-tree",
+            ]
+        }
+    },
+    "runArgs": [
+        "--init",
+        "--privileged"
+    ],
+    "remoteUser": "root",
+    "postCreateCommand": "go mod init github.com/ChikaKakazu/code-forge && go mod tidy",
+    "workspaceFolder": "/workspace",
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+    ]
+}

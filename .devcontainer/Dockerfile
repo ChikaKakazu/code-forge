@@ -7,8 +7,10 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /workspace
 
 # 環境変数など（必要なら）
-ENV CGO_ENABLED=0
-ENV GO111MODULE=on
+ENV CGO_ENABLED=0 \
+    GO111MODULE=on \
+    GOPATH=/go \
+    PATH="/go/bin:${PATH}"
 
 # 必要なGoツールやライブラリをインストール
 RUN go install github.com/spf13/cobra-cli@latest

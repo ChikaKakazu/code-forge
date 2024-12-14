@@ -1,0 +1,5 @@
+# code-forgeの設定ファイル
+templates:
+  - name: example
+    path: ./template/example.txt
+		outputDir: ./output

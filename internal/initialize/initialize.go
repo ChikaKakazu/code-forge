@@ -13,7 +13,7 @@ var configTemplate []byte
 
 // 設定ファイルとテンプレートファイル配置先のディレクトリを作成
 func Initialize() {
-	templateDir := "forge"
+	templateDir := ".forge"
 	outputPath := ".code-forge.yml"
 
 	err := os.MkdirAll(templateDir, os.ModePerm)
